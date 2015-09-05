@@ -39,6 +39,8 @@ group :development, :test do
   gem 'rspec-rails'
   # Run feature tests using Capybara
   gem 'capybara'
+
+  gem 'database_cleaner'
 end
 
 group :development do
