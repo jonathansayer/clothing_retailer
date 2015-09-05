@@ -1,5 +1,5 @@
 Products:
 <% @products.each do |product|  %>
   <%= product.name %>
-    <%= button_to "Add to Cart", shopping_cart_update_path, params: { product_id: product.id } %>
+  <%= button_to "Add to Cart", shopping_cart_update_path, params: { product_id: product.id } %>
 <% end %>
