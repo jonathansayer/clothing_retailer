@@ -1,0 +1,7 @@
+<% if @in_cart.length > 0 %>
+  <% @in_cart.each do |item| %>
+    <%= item.name %>
+    <% end %>
+<% else %>
+  <%= "No items in cart" %>
+<% end %>
