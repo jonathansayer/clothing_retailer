@@ -23,5 +23,6 @@ feature 'shopping cart' do
       click_button "Remove from Cart"
       expect(page).not_to have_content "FlipFlops,Red"
     end
+  
   end
 end

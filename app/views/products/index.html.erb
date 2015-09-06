@@ -1,5 +1,6 @@
 Products:
 <% @products.each do |product|  %>
   <%= product.name %>
+  <%= "£#{number_with_precision product.price, precision: 2}" %>
   <%= button_to "Add to Cart", shopping_cart_update_path, params: { product_name: product.name } %>
 <% end %>
