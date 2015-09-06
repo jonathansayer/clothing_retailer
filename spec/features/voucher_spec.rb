@@ -18,10 +18,15 @@ feature 'vouchers' do
     click_button 'Redeem Voucher'
     expect(page).to have_content "The Code you entered is Incorrect"
   end
-scenario "When first visiting shopping there should be no text refering to a correct or incorrent voucher" do
-  visit '/shopping_cart'
-  expect(page).not_to have_content "You have Redeemed your Voucher"
-  expect(page).not_to have_content "The Code you entered is Incorrect"
-end
+
+  scenario "When first visiting shopping there should be no text refering to a correct or incorrent voucher" do
+    visit '/shopping_cart'
+    expect(page).not_to have_content "You have Redeemed your Voucher"
+    expect(page).not_to have_content "The Code you entered is Incorrect"
+  end
+
+  # scenario "will allow a user to enter 15OFF when they order footwear" do
+  #   OrderedProduct.create(name: "FlipFlops,Blue", price: 19.00, catagory: 'Men’s Footwear')
+  #   OrderedProduct.create(name: "GoldButtonCardigan, Black", price: 19.00, catagory: 'Women’s Casualwear')
 
 end

@@ -4,6 +4,7 @@ class CreateOrderedProducts < ActiveRecord::Migration
       t.string :name
       t.decimal :price, :precision => 30, :scale => 10
       t.integer :quantity
+      t.string :catagory
 
       t.timestamps null: false
     end

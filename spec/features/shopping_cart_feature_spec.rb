@@ -53,7 +53,5 @@ feature 'shopping cart' do
     end
 
 
-
-
   end
 end

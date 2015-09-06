@@ -13,5 +13,7 @@ feature 'products' do
       visit '/'
       expect(page).to have_content "£42.00"
     end
+
+  
   end
 end
