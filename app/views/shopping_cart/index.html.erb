@@ -4,6 +4,7 @@ Shopping Cart
   <% @in_cart.each do |item| %>
     <%= item.name %>
     <%= item.quantity %>
+    <%= button_to "Remove from Cart", shopping_cart_delete_path, params: { product_name: item.name } %>
     <% end %>
 <% else %>
   <%= "No items in cart" %>
