@@ -6,7 +6,7 @@ class ShoppingCartController < ApplicationController
 
   def update
     @parameters = params
-    UpdateOrderedItems.add_to_ordered_items params["product_id"]
+    UpdateOrderedItems.add_to_ordered_items params["product_name"]
     redirect_to(shopping_cart_url)
   end
 end
