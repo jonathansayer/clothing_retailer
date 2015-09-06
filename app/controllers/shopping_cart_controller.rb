@@ -10,5 +10,10 @@ class ShoppingCartController < ApplicationController
     redirect_to(shopping_cart_url)
   end
 
+  def delete
+    RemoveFromCart.remove_product params["product_name"]
+    redirect_to(shopping_cart_url)
+  end
+
 
 end
