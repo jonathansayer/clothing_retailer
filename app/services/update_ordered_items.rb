@@ -1,10 +1,8 @@
 class UpdateOrderedItems
 
   def self.add_to_ordered_items product_name
-    if  p  self.find_duplicates product_name
+    if  self.find_duplicates product_name
       product = OrderedProduct.find_by name:product_name
-      p product
-      p product.quantity
       product.update_attribute(:quantity, product.quantity += 1)
     else
       product = self.find_item product_name
