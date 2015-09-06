@@ -8,5 +8,4 @@ class CartTotal
     end
     total
   end
-
 end

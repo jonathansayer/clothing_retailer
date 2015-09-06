@@ -44,7 +44,7 @@ feature 'shopping cart' do
       expect(page).to have_content "£136.00"
     end
 
-    xscenario 'should display a total for all products in the cart' do
+    scenario 'should display a total for all products in the cart' do
       OrderedProduct.create(name: "AlmondToeCourtShoes,PatentBlack", price: 99.00, quantity: 2)
       OrderedProduct.create(name: "SuedeShoes,Blue", price: 42.00, quantity: 3)
       OrderedProduct.create(name: "LeatherDriverSaddleLoafers,Tan", price:34.00, quantity: 4)

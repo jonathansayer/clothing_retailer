@@ -2,6 +2,7 @@ class ShoppingCartController < ApplicationController
 
   def index
     @in_cart = OrderedProduct.all
+    @total = CartTotal.total_calculation
   end
 
   def update
