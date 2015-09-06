@@ -5,6 +5,7 @@ Shopping Cart
     <%= item.name %>
     <%= item.quantity %>
     <%= "£#{number_with_precision item.price, precision: 2}" %>
+    <%= "£#{number_with_precision (item.price * item.quantity), precision: 2}" %>
     <%= button_to "Remove from Cart", shopping_cart_delete_path, params: { product_name: item.name } %>
     <% end %>
 <% else %>
