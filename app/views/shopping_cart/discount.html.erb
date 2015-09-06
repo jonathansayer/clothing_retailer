@@ -1,0 +1,7 @@
+<div>
+<%= form_for(:voucher, url: shopping_cart_apply_discount_path) do |f| %>
+  <%= f.label :Code %>
+  <%= f.text_field :code %>
+  <%= f.submit "Redeem Voucher" %>
+<% end %>
+</div>
