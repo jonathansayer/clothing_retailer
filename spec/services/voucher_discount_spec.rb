@@ -4,16 +4,16 @@ describe VoucherDiscount do
 
   let(:subject) { VoucherDiscount }
 
-  it'respond to which_voucher' do
-    expect(subject).to respond_to(:which_voucher).with(1).argument
+  it'respond to a_voucher' do
+    expect(subject).to respond_to(:a_voucher?).with(1).argument
   end
 
   it'should be able to determine a £5 off voucher being used' do
-    expect(subject.which_voucher "5OFF").to eq "£5 Off"
+    expect(subject.a_voucher? "5OFF").to eq true
   end
 
   it 'should be able to determine a £10 off voucher is being used' do
-    expect(subject.which_voucher "10OFF").to eq "£10 off when you spend over £50"
+    expect(subject.a_voucher? "10OFF").to eq true
   end
 
   it 'should discount 5 pound off total if 5OFF is used' do

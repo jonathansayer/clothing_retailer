@@ -3,9 +3,11 @@ class ShoppingCartController < ApplicationController
   def index
     @in_cart = OrderedProduct.all
     @total = CartTotal.total_calculation
-    if session[:code]
+    if VoucherDiscount.a_voucher? session[:code]
       @code = session[:code]
       @total = VoucherDiscount.apply_discount @code, @total
+    elsif session[:code]
+      @error = "The Code you entered is Incorrect"
     end
   end
 
