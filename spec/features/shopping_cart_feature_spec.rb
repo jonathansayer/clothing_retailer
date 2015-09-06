@@ -24,12 +24,16 @@ feature 'shopping cart' do
       expect(page).not_to have_content "FlipFlops,Red"
     end
 
-    # scenario 'should display the price of the individual items' do
-    #   OrderedProduct.create(name: "AlmondToeCourtShoes,PatentBlack", price: 99.00)
-    #   OrderedProduct.create(name: "SuedeShoes,Blue", price: 42.00)
-    #   OrderedProduct.create(name: "LeatherDriverSaddleLoafers,Tan", price:34.00)
-    #   visit '/'
-    #   click_button ""
-    #
+    scenario 'should display the price of the individual items' do
+      OrderedProduct.create(name: "AlmondToeCourtShoes,PatentBlack", price: 99.00)
+      OrderedProduct.create(name: "SuedeShoes,Blue", price: 42.00)
+      OrderedProduct.create(name: "LeatherDriverSaddleLoafers,Tan", price:34.00)
+      visit '/shopping_cart'
+      expect(page).to have_content "£99.00"
+      expect(page).to have_content "£42.00"
+      expect(page).to have_content "£34.00"
+    end
+
+
   end
 end

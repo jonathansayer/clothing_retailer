@@ -1,10 +1,10 @@
 Shopping Cart
 <div>
 <% if @in_cart.length > 0 %>
-  <% @in_cart.each do |item| %>
+  <% @in_cart.sort_by { |e| e.name }.each do |item| %>
     <%= item.name %>
     <%= item.quantity %>
-    <%= "£#{item.price}" %>
+    <%= "£#{number_with_precision item.price, precision: 2}" %>
     <%= button_to "Remove from Cart", shopping_cart_delete_path, params: { product_name: item.name } %>
     <% end %>
 <% else %>
