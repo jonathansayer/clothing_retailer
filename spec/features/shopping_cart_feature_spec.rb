@@ -34,7 +34,7 @@ feature 'shopping cart' do
       expect(page).to have_content "£34.00"
     end
 
-    scenario 'should display totals for individual items ' do
+    scenario 'should display a total for individual items ' do
       OrderedProduct.create(name: "AlmondToeCourtShoes,PatentBlack", price: 99.00, quantity: 2)
       OrderedProduct.create(name: "SuedeShoes,Blue", price: 42.00, quantity: 3)
       OrderedProduct.create(name: "LeatherDriverSaddleLoafers,Tan", price:34.00, quantity: 4)
@@ -43,6 +43,15 @@ feature 'shopping cart' do
       expect(page).to have_content "£126.00"
       expect(page).to have_content "£136.00"
     end
+
+    xscenario 'should display a total for all products in the cart' do
+      OrderedProduct.create(name: "AlmondToeCourtShoes,PatentBlack", price: 99.00, quantity: 2)
+      OrderedProduct.create(name: "SuedeShoes,Blue", price: 42.00, quantity: 3)
+      OrderedProduct.create(name: "LeatherDriverSaddleLoafers,Tan", price:34.00, quantity: 4)
+      visit 'shopping_cart'
+      expect(page).to have_content "Total: £460.00"
+    end
+
 
 
 
