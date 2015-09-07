@@ -4,5 +4,7 @@ Products:
   <%= "£#{number_with_precision product.price, precision: 2}" %>
   <% if product.quantity > 0 %>
     <%= button_to "Add to Cart", shopping_cart_update_path, params: { product_name: product.name }, :id =>product.name %>
+  <% else %>
+  <%= "Not in Stock" %>
   <% end %>
 <% end %>

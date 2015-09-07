@@ -12,7 +12,6 @@ class ShoppingCartController < ApplicationController
   end
 
   def update
-    @parameters = params
     UpdateOrderedItems.add_to_ordered_items params["product_name"]
     redirect_to(shopping_cart_url)
   end
@@ -29,6 +28,4 @@ class ShoppingCartController < ApplicationController
     session[:code] = params[:voucher][:code]
     redirect_to(shopping_cart_url)
   end
-
-
 end

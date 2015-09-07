@@ -9,23 +9,31 @@ describe UpdateOrderedItems do
   end
 
   it 'must add the Product to the OrderedItems table' do
-    product = Product.create(name:'BirdPrintDress,Black')
+    product = Product.create(name:'BirdPrintDress,Black', quantity: 3)
     subject.add_to_ordered_items 'BirdPrintDress,Black'
     expect(OrderedProduct.first.name).to eq 'BirdPrintDress,Black'
   end
 
-  describe 'finding duplicates' do
+  context 'finding duplicates' do
     it 'must be able to find products that have already been purchased' do
-      product = Product.create(name:'BirdPrintDress,Black')
+      product = Product.create(name:'BirdPrintDress,Black', quantity: 3)
       subject.add_to_ordered_items 'BirdPrintDress,Black'
       expect(subject.find_duplicates 'BirdPrintDress,Black').to eq true
     end
 
     it 'if a duplicate is found, the quantity is increased by one' do
-      product = Product.create(name:'BirdPrintDress,Black')
+      product = Product.create(name:'BirdPrintDress,Black', quantity: 3)
       subject.add_to_ordered_items 'BirdPrintDress,Black'
       subject.add_to_ordered_items 'BirdPrintDress,Black'
       expect(OrderedProduct.first.quantity).to eq 2
+    end
+  end
+
+  context 'reducing Stock' do
+    it 'must reduce the amount of items in stock when moving to the shopping cart' do
+      product = Product.create(name:'BirdPrintDress,Black', quantity: 3)
+      subject.add_to_ordered_items 'BirdPrintDress,Black'
+      expect(Product.first.quantity).to be 2
     end
   end
 end

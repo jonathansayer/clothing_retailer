@@ -6,6 +6,8 @@ class RemoveFromCart
     else
       OrderedProduct.where(name:product_name).delete_all
     end
+    product = Product.find_by(name:product_name)
+    product.update_attribute(:quantity, product.quantity += 1)
   end
 
   private
@@ -14,7 +16,7 @@ class RemoveFromCart
     self.find_product_in_cart product_name
     @product.quantity > 1
   end
-  
+
   def self.find_product_in_cart product_name
     @product = OrderedProduct.find_by name: product_name
   end
