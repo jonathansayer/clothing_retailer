@@ -1,17 +1,52 @@
-Shopping Cart
-<div>
-<% if @in_cart.length > 0 %>
-  <% @in_cart.sort_by { |e| e.name }.each do |item| %>
-    <%= item.name %>
-    <%= item.quantity %>
-    <%= "£#{number_with_precision item.price, precision: 2}" %>
-    <%= "£#{number_with_precision (item.price * item.quantity), precision: 2}" %>
-    <%= button_to "Remove from Cart", shopping_cart_delete_path, params: { product_name: item.name } %>
-    <% end %>
-  <%= "Total: £#{number_with_precision @total, precision: 2}" %>
-<% else %>
-  <%= "No items in cart" %>
-<% end %>
-<%= link_to "Redeem Voucher", controller: "shopping_cart", action: "discount" %>
-<%= link_to "Back to Shopping", controller:"products", action: "index" %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <% if @in_cart.length > 0 %>
+          <% @in_cart.sort_by { |i| i.name }.each do |item| %>
+          <div class="col-xs-6 col-md-4">
+            <%= item.name %>
+            <div class="col-xs-3 col-md-2">
+              <%= item.quantity %>
+            </div>
+          </div>
+          <div class="col-xs-8 col-md-3">
+            <%= "£#{number_with_precision item.price, precision: 2}" %>
+          </div>
+          <div class="col-xs-8 col-md-1">
+            <%= "£#{number_with_precision (item.price * item.quantity), precision: 2}" %>
+          </div>
+            <%= button_to "Remove from Cart", shopping_cart_delete_path, params: { product_name: item.name } %>
+            <% end %>
+            <div class="panel-footer">
+          <div>
+          <%= "Total:" %>
+        </div>
+          <div>
+          <%= " £#{number_with_precision @total, precision: 2}" %>
+        </div>
+        <% else %>
+          <%= "No items in cart" %>
+        <% end %>
+      </div>
+    </div>
 </div>
+      <div>
+      <%= link_to "Redeem Voucher", controller: "shopping_cart", action: "discount" %>
+    </div>
+    <div>
+      <%= link_to "Back to Shopping", controller:"products", action: "index" %>
+    </div>
+</body>

@@ -7,6 +7,7 @@ feature 'vouchers' do
     expect(current_path).to eq '/shopping_cart_discount'
     fill_in('Code', :with => "5OFF")
     click_button 'Redeem Voucher'
+    expect(current_path).to eq '/shopping_cart'
     expect(page).to have_content "You have Redeemed your Voucher"
   end
 
