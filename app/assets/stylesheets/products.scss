@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h1 {
-   font-size: 100px;
-   font-family: "Time New Roman"
+  text-align: center;
+  font-family: cursive;
  }
+body {
+  background-color: #b0c4de;
+}
+.panel-default {
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-bottom: 50px;
+  border-style: bold;
+  border-width: 5px;
+  border-color: red;
+}
+.cart_button {
+  margin-left: 300px;
+}
