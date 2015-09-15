@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150915134200) do
     t.decimal  "price",      precision: 30, scale: 10
     t.integer  "quantity"
     t.string   "catagory"
+    t.string   "img"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150915134200) do
     t.decimal  "price",      precision: 30, scale: 10
     t.integer  "quantity"
     t.string   "catagory"
+    t.string   "img"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end

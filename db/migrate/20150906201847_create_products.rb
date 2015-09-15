@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.decimal :price, :precision => 30, :scale => 10
       t.integer :quantity
       t.string :catagory
+      t.string :img
 
       t.timestamps null: false
     end
