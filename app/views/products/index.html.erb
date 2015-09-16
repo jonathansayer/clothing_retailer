@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Products</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= stylesheet_link_tag "products.scss", media: "all" %>
+  </head>
+  <body>
+    <div class="content-box">
+      <div id="ribbon-container">
+        <%= link_to "Shopping Cart", controller: "shopping_cart", action: "index", id:"ribbon" %>
+        <div class="heading">
+          <h1>Our Products</h1>
+        </div>
+      </div>
+    </div>
+  <br>
+  <% @products.each do |product|  %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="col-xs-12 col-md-12">
+        <div class="product-name1">
+          <%= product.name %>
+        </div>
+      </div>
+      <br>
+      <div class="product-img">
+        <%= image_tag product.img, :size => "260x260" %>
+      </div>
+      <div class="col-xs-6 col-md-12">
+        <div class="product-price">
+          <br>
+          <%= "£#{number_with_precision product.price, precision: 2}" %>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <% if product.quantity > 0 %>
+        <%= button_to "Add to Cart", shopping_cart_update_path, params: { product_name: product.name }, :id =>product.name, :class =>"cart_button" %>
+      <% else %>
+          <%= "Not in Stock" %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </body>
+</html>

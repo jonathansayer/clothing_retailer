@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= stylesheet_link_tag "shopping_cart.scss", media: "all" %>
+  </head>
+
+  <body>
+    <div class="content-box">
+      <div id="ribbon-container">
+          <%= link_to "Back to Shopping", controller: "products", action: "index", id:"ribbon" %>
+        <div class="heading">
+          <h1>Shopping Cart</h1>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <% if @in_cart.length > 0 %>
+          <% @in_cart.sort_by { |i| i.name }.each do |item| %>
+          <div class="col-xs-5 col-md-4">
+            <div class="product-name">
+            <%= item.name %>
+            </div>
+          </div>
+          <div class="col-xs-5 col-md-1">
+            <%= item.quantity %>
+          </div>
+          <div class="col-xs-2 col-md-2">
+            <div class="product-price">
+              <%= "£#{number_with_precision item.price, precision: 2}" %>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-2">
+            <%= "£#{number_with_precision (item.price * item.quantity), precision: 2}" %>
+          </div>
+            <%= button_to "Remove from Cart", shopping_cart_delete_path, params: { product_name: item.name } %>
+            <br>
+            <% end %>
+            <div class="panel-footer">
+              <%= "Total:" %>
+              <%= " £#{number_with_precision @total, precision: 2}" %>
+            </div>
+            <% else %>
+              <%= "No items in cart" %>
+            <% end %>
+          <div class="links1">
+            <%= link_to "Redeem Voucher", controller: "shopping_cart", action: "discount" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
