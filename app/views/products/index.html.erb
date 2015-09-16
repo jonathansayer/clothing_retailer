@@ -20,7 +20,7 @@
                 <%= product.name %>
               </div>
               <div class="product-img">
-                <img src=product.img>
+                <%= image_tag product.img, :size => "260x260" %>
               </div>
               <div class="col-xs-6 col-md-4">
                 <%= "£#{number_with_precision product.price, precision: 2}" %>
