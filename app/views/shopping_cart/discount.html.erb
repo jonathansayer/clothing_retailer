@@ -12,16 +12,30 @@
     <%= stylesheet_link_tag "application", media: "all" %>
   </head>
   <body>
-    <h1> Redeem Voucher </h1>
-<div class='form'>
-<%= form_for(:voucher, url: shopping_cart_apply_discount_path) do |f| %>
-  <%= f.label :Code, :class => "col-xs-1 col-md-12"  %>
-  <%= f.text_field :code, id:'Code',:class => "code", :placeholder => "Enter Voucher Code Here"%>
-  <%= f.submit "Redeem Voucher" %>
-<% end %>
-</div>
-<div class='links'>
-  <%= link_to "Back to Shopping", controller:"products", action: "index" %>
-  <br>
-  <%= link_to "Shopping Cart", controller:"shopping_cart", action: "index" %>
-</div>
+    <div class="content-box">
+      <div id="ribbon-container">
+        <%= link_to "Shopping Cart", controller: "shopping_cart", action: "index", id:"ribbon" %>
+          <div class="heading">
+            <h1>Redeem Voucher</h1>
+          </div>
+      </div>
+    </div>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class='form'>
+          <%= form_for(:voucher, url: shopping_cart_apply_discount_path) do |f| %>
+          <%= f.label :Code, :class => "col-xs-1 col-md-12"  %>
+          <%= f.text_field :code, id:'Code',:class => "code", :placeholder => "Enter Voucher Code Here"%>
+          <%= f.submit "Redeem Voucher" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class='links'>
+          <%= link_to "Back to Shopping", controller:"products", action: "index" %>
+          <br>
+        </div>
+      </div>
+    </div>
+  </body>

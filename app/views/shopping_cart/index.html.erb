@@ -14,7 +14,15 @@
   </head>
 
   <body>
-    <h1> Shopping Cart </h1>
+    <div class="content-box">
+      <div id="ribbon-container">
+          <%= link_to "Back to Shopping", controller: "products", action: "index", id:"ribbon" %>
+        <div class="heading">
+          <h1>Shopping Cart</h1>
+        </div>
+      </div>
+    </div>
+    <br>
     <div class="panel panel-default">
       <div class="panel-body">
         <% if @in_cart.length > 0 %>
@@ -39,21 +47,16 @@
             <br>
             <% end %>
             <div class="panel-footer">
-          <div>
-          <%= "Total:" %>
+              <%= "Total:" %>
+              <%= " £#{number_with_precision @total, precision: 2}" %>
+            </div>
+            <% else %>
+              <%= "No items in cart" %>
+            <% end %>
+          <div class="links1">
+            <%= link_to "Redeem Voucher", controller: "shopping_cart", action: "discount" %>
+          </div>
         </div>
-          <div>
-          <%= " £#{number_with_precision @total, precision: 2}" %>
-        </div>
-        <% else %>
-          <%= "No items in cart" %>
-        <% end %>
       </div>
     </div>
-</div>
-      <div class="links1">
-        <%= link_to "Redeem Voucher", controller: "shopping_cart", action: "discount" %>
-        <br>
-        <%= link_to "Back to Shopping", controller:"products", action: "index" %>
-    </div>
-</body>
+  </body>

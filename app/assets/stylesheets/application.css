@@ -16,8 +16,14 @@
 
  h1 {
    text-align: center;
+   font-size: 75px;
    font-family: cursive;
+
   }
  body {
-   background-image: #b0c4de;
- }
+   background-image: url("male_fashion_model.png"), url("female_fashion_model.png");
+   background-size: 600px, 600px;
+   background-attachment: fixed;
+   background-position: left top, right top;
+   background-repeat: no-repeat;
+}
