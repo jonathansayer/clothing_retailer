@@ -7,11 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="message">
   <% if @code %>
     <%= "You have Redeemed your Voucher" %>
   <% else %>
     <%= "#{@error}" %>
   <% end %>
+</div>
 
 <%= yield %>
 

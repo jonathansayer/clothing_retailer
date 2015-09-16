@@ -27,3 +27,7 @@
    background-position: left top, right top;
    background-repeat: no-repeat;
 }
+
+.message {
+  color: white
+}
