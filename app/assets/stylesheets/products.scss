@@ -1,13 +1,7 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1 {
-  text-align: center;
-  font-family: cursive;
- }
-body {
-  background-color: #b0c4de;
-}
+
 .panel-default {
   margin-right: 200px;
   margin-left: 200px;
@@ -17,5 +11,21 @@ body {
   border-color: red;
 }
 .cart_button {
-  margin-left: 300px;
+  text-align: center;
+}
+
+.product-img {
+  margin-left: 200px
+}
+
+.product-name1 {
+  font-family: cursive;
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.product-price {
+  margin-right: 25px;
+  text-align: center;
 }
