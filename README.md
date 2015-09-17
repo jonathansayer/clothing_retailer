@@ -1,19 +1,25 @@
-== README
+README
+-------
 
 A Rails application which serves a Website or the use of a Clothing Retailer.
 This application was built using Ruby 2.2.2.
 
 
-****To Run the Program
+To Run the Program
+-------
 Once the the repo has been pulled down from github, the user should install
 all the gems in the Gemfile. If Bundler is not already install this should be
 done first.
 
-```$ gem install bundler ```
+```
+$ gem install bundler
+```
 
 Then run bundler to install the gems.
 
-```$ bundle ```
+```
+$ bundle
+ ```
 
 This program is built using a postgresql database, so in order to use the website,
 the user should first have postgres installed.
@@ -34,7 +40,8 @@ rails s
 ```
 The Website will be served on Localhost:3000.
 
-****Code Layout
+Code Layout
+-------
 
 All the code is layed out in the traditional format. The Controllers can be found
 the app/controller. Images, and stylesheets and be found in app/assets and feature and
@@ -51,12 +58,15 @@ The Voucher codes are as follows:
 The testing suite used was Rspec and can be used by simply running the rspec command
 in command line.
 
-```$ rspec ```
+```
+$ rspec
+```
 
 Finally a Boottrap CDN is used to assist with the styling of the website.
 
 
-****My Approach
+My Approach
+-------
 I used the Behaviour Driven Development methodology to develop this Web application.
 I first wrote a feature test, which tested that a user could add items to a shopping cart.
 From this I created the databases needed to pass this test before then moving onto
@@ -67,13 +77,15 @@ was developed fully before moving onto another. Lastly some styling was added to
 make the website more presentable.
 
 
-****Difficulties
+Difficulties
+-------
 My experience with front end development is limited, as I have focused mainly on backend
 development. As a result one of the most difficult things I found when developing this
 website was developing the front end and adding styling. Having said that I am happy with
 how the front end looks and I learnt a lot in the process, especially about CSS.
 
-****Imrovements That Could Be Made
+Improvements That Could Be Made
+-------
 The most obvious problem currently comes when re-sizing the browser. The images,
 both product images and background images, do not re-size with the browser. As
 a result the background images can separate or overlap and the products can become
