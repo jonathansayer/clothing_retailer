@@ -95,4 +95,5 @@ mis-aligned with their product information, I beleive this because I have used p
 rather than %.
 The Code is written on a Rails framework. As much as working with Rails has made
 it a lot easier when working with the database, and I belive easier for the user setup the database, the website could have been built on a framework such as Sinatra to retain code simplicity. However, having said that, a huge effort has gone into code refacotring and improving readability on the current framework. 
+At the moment there is no easy way to increase the quantity of a product already in the basket. A user has to go back to the shopping page and add the item to the basket again. An improvement would be to add a button which simply imcreases the quantity. 
 I will continue to work on these improvements and develope my front end skills.
