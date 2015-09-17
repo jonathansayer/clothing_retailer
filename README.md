@@ -1,14 +1,14 @@
 README
 -------
 
-A Rails application which serves a Website or the use of a Clothing Retailer.
+A Rails application which serves a Website for the use of a Clothing Retailer.
 This application was built using Ruby 2.2.2.
 
 
 To Run the Program
 -------
 Once the the repo has been pulled down from github, the user should install
-all the gems in the Gemfile. If Bundler is not already install this should be
+all the gems in the Gemfile. If Bundler is not already installed this should be
 done first.
 
 ```
@@ -26,7 +26,7 @@ the user should first have postgres installed.
 
 The relevant database and tables need to be created first in order to run the website.
 First Run a migrate to create a Products and an Ordered Products table. The Products
-table will be populated with products.
+table will be populated with products, prices and stock numbers.
 
 ```
 $ rake db:create
@@ -43,26 +43,27 @@ The Website will be served on Localhost:3000.
 Code Layout
 -------
 
-All the code is layed out in the traditional format. The Controllers can be found
-the app/controller. Images, and stylesheets and be found in app/assets and feature and
-unit tests can be found in the Spec folder. In addition several services have been developed
-to assist in the Business logic. These can be found in app/services. The corresponding
-unit tests can be found in Spec File. The Services file contains classes that calculate
-the total in the cart, remove and add items in the cart and implement voucher codes.
+All the code is layed out in the traditional format.
+- The Controllers can be found the app/controller.
+- Images, and stylesheets and be found in app/assets.
+- Feature and Unit tests can be found in the Spec folder. 
+
+In addition several services have been developed to assist in the Business logic. These can be found in app/services. The corresponding unit tests can be found in Spec File. The Services file contains classes that calculate
+the total in the cart, remove and add items in the cart and implement Voucher codes.
 
 The Voucher codes are as follows:
 5OFF - £5 off your order
 10OFF - £10 off when you spend over £50
-15OFF. - £50 off when you spend over £75, include at least one footwear item.
+15OFF - £50 off when you spend over £75, include at least one footwear item.
 
-The testing suite used was Rspec and can be used by simply running the rspec command
-in command line.
+The testing suite used is Rspec and can be used by simply running the rspec command
+in command line from the root folder.
 
 ```
 $ rspec
 ```
 
-Finally a Boottrap CDN is used to assist with the styling of the website.
+Finally a Bootstrap CDN is used to assist with the styling of the website.
 
 
 My Approach
@@ -84,13 +85,14 @@ development. As a result one of the most difficult things I found when developin
 website was developing the front end and adding styling. Having said that I am happy with
 how the front end looks and I learnt a lot in the process, especially about CSS.
 
+
 Improvements That Could Be Made
 -------
 The most obvious problem currently comes when re-sizing the browser. The images,
 both product images and background images, do not re-size with the browser. As
 a result the background images can separate or overlap and the products can become
-mis-aligned with their product information.
+mis-aligned with their product information, I beleive this because I have used px to position elements
+rather than %.
 The Code is written on a Rails framework. As much as working with Rails has made
-it a lot easier when working with the database, the website could have been built
-on a framework such as Sinatra to keep simplicity.
-I will continue to work on these improvements and developing my front end skills.
+it a lot easier when working with the database, and I belive easier for the user setup the database, the website could have been built on a framework such as Sinatra to retain code simplicity. However, having said that, a huge effort has gone into code refacotring and improving readability on the current framework. 
+I will continue to work on these improvements and develope my front end skills.
