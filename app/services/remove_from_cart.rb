@@ -7,7 +7,7 @@ class RemoveFromCart
       OrderedProduct.where(name:product_name).delete_all
     end
     product = Product.find_by(name:product_name)
-    product.update_attribute(:quantity, product.quantity += 1)
+    product.update_attribute(:stock, product.stock += 1)
   end
 
   private

@@ -8,7 +8,7 @@ feature 'shopping cart' do
     end
 
     scenario 'should be able to add items to the cart' do
-      Product.create(name: "Suede Shoes, Blue",price: 42.00, quantity:1)
+      Product.create(name: "Suede Shoes, Blue",price: 42.00, stock:1)
       visit '/'
       click_button "Suede Shoes, Blue"
       expect(current_path).to eq "/shopping_cart"
@@ -16,7 +16,7 @@ feature 'shopping cart' do
     end
 
     scenario 'should be able to remove items from the cart' do
-      Product.create(name: "FlipFlops,Red",price: 19.00, quantity:1)
+      Product.create(name: "FlipFlops,Red",price: 19.00, stock:1)
       visit '/'
       click_button 'FlipFlops,Red'
       expect(current_path).to eq "/shopping_cart"
