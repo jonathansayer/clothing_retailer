@@ -93,8 +93,4 @@ mis-aligned with their product information.
 The Code is written on a Rails framework. As much as working with Rails has made
 it a lot easier when working with the database, the website could have been built
 on a framework such as Sinatra to keep simplicity.
-At the moment the property of "quantity" is given to both "Products" and "Ordered_Products"
-but has different meanings for each model. In the Products model, the term is to
-denote the amount of the item in Stock. In the Ordered_Products, quantity denotes the
-amount in the basket. Ideally these would be two different terms.
 I will continue to work on these improvements and developing my front end skills.
