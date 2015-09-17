@@ -1,4 +1,4 @@
-== README
+README
 
 A Rails application which serves a Website or the use of a Clothing Retailer.
 This application was built using Ruby 2.2.2.
