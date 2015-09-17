@@ -73,6 +73,13 @@ rails s
 ```
 The Website will be served on Localhost:3000.
 
+The testing suite used is Rspec and can be used by simply running the rspec command
+in command line from the root folder.
+
+```
+$ rspec
+```
+
 Code Layout
 -------
 
@@ -84,16 +91,11 @@ All the code is layed out in the traditional format.
 In addition several services have been developed to assist in the Business logic. These can be found in app/services. The corresponding unit tests can be found in Spec File. The Services file contains classes that calculate
 the total in the cart, remove and add items in the cart and implement Voucher codes.
 
+Finally a Bootstrap CDN is used to assist with the styling of the website.
+
+Voucher Codes
+-------
 The Voucher codes are as follows:
 5OFF - £5 off your order
 10OFF - £10 off when you spend over £50
 15OFF - £50 off when you spend over £75, include at least one footwear item.
-
-The testing suite used is Rspec and can be used by simply running the rspec command
-in command line from the root folder.
-
-```
-$ rspec
-```
-
-Finally a Bootstrap CDN is used to assist with the styling of the website.
