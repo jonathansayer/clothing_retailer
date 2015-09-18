@@ -91,7 +91,7 @@ All the code is layed out in the traditional format.
 In addition several services have been developed to assist in the Business logic. These can be found in app/services. The corresponding unit tests can be found in Spec File. The Services file contains classes that calculate
 the total in the cart, remove and add items in the cart and implement Voucher codes.
 
-Finally a Bootstrap CDN is used to assist with the styling of the website.
+Finally a Bootstrap CDN is used to assist with the styling of the website. This does mean that a User has to be connected to the internet to view some of the CSS elements. 
 
 Voucher Codes
 -------
