@@ -25,9 +25,4 @@ feature 'vouchers' do
     expect(page).not_to have_content "You have Redeemed your Voucher"
     expect(page).not_to have_content "The Code you entered is Incorrect"
   end
-
-  # scenario "will allow a user to enter 15OFF when they order footwear" do
-  #   OrderedProduct.create(name: "FlipFlops,Blue", price: 19.00, catagory: 'Men’s Footwear')
-  #   OrderedProduct.create(name: "GoldButtonCardigan, Black", price: 19.00, catagory: 'Women’s Casualwear')
-
 end
