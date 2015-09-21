@@ -22,7 +22,7 @@
   }
  body {
    background-image: url("male_fashion_model.png"), url("female_fashion_model.png");
-   background-size: 600px, 600px;
+   background-size: 50%, 50%;
    background-attachment: fixed;
    background-position: left top, right top;
    background-repeat: no-repeat;
