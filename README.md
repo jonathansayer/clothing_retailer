@@ -26,7 +26,7 @@ how the front end looks and I learnt a lot in the process, especially about CSS.
 
 Improvements That Could Be Made
 -------
-The most obvious problem currently comes when re-sizing the browser. The Price of the Products Jumps around in the Panel instead of moving smoothly. The Background images also overlap or split apart when the browser is resized. I beleive this because I have used px to position elements rather than %.
+The most obvious problem currently comes when re-sizing the browser. The Price of the Products Jumps around in the Panel instead of moving smoothly. I beleive this because I have used px to position elements rather than %.
 The Code is written on a Rails framework. As much as working with Rails has made
 it a lot easier when working with the database, and I belive easier for the user setup the database, the website could have been built on a framework such as Sinatra to retain code simplicity. However, having said that, a huge effort has gone into code refactoring and improving readability on the current framework. 
 At the moment there is no easy way to increase the quantity of a product already in the basket. A user has to go back to the shopping page and add the item to the basket again. An improvement would be to add a button which simply imcreases the quantity. 
