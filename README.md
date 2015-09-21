@@ -26,13 +26,10 @@ how the front end looks and I learnt a lot in the process, especially about CSS.
 
 Improvements That Could Be Made
 -------
-The most obvious problem currently comes when re-sizing the browser. The images,
-both product images and background images, do not re-size with the browser. As
-a result the background images can separate or overlap and the products can become
-mis-aligned with their product information, I beleive this because I have used px to position elements
+The most obvious problem currently comes when re-sizing the browser. The images change size with the browser but the " Add to Cart " button stays in the same position. The Background images also overlap or split apart when the browser is resized. I beleive this because I have used px to position elements
 rather than %.
 The Code is written on a Rails framework. As much as working with Rails has made
-it a lot easier when working with the database, and I belive easier for the user setup the database, the website could have been built on a framework such as Sinatra to retain code simplicity. However, having said that, a huge effort has gone into code refacotring and improving readability on the current framework. 
+it a lot easier when working with the database, and I belive easier for the user setup the database, the website could have been built on a framework such as Sinatra to retain code simplicity. However, having said that, a huge effort has gone into code refactoring and improving readability on the current framework. 
 At the moment there is no easy way to increase the quantity of a product already in the basket. A user has to go back to the shopping page and add the item to the basket again. An improvement would be to add a button which simply imcreases the quantity. 
 Also there is no JavaScript currently being implemented in the front end. This makes removing items from the cart less smooth in terms of user experience due to reloading the page. Improvements would be to use Javascript so that the page does not have to reload when removing items from the cart. 
 I will continue to work on these improvements and develope my front end skills.
