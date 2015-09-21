@@ -16,9 +16,9 @@ feature 'shopping cart' do
     end
 
     scenario 'should be able to remove items from the cart' do
-      Product.create(name: "FlipFlops,Red",price: 19.00, stock:1)
+      Product.create(name: "Flip Flops, Red",price: 19.00, stock:1)
       visit '/'
-      click_button 'FlipFlops,Red'
+      click_button 'Flip Flops, Red'
       expect(current_path).to eq "/shopping_cart"
       click_button "Remove from Cart"
       expect(page).not_to have_content "FlipFlops,Red"
