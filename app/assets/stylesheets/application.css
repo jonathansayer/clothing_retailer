@@ -25,7 +25,7 @@
    background-size: 50%, 50%;
    background-attachment: fixed;
    background-position: left top, right top;
-   background-repeat: no-repeat;
+   background-repeat: repeat-y;
 }
 
 .message {
