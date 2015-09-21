@@ -42,7 +42,7 @@
     </div>
     <div class="panel-footer">
       <% if product.stock > 0 %>
-        <%= button_to "Add to Cart", shopping_cart_update_path, params: { product_name: product.name }%>
+        <%= button_to "Add to Cart", shopping_cart_update_path, params: { product_name: product.name }, :class => "add_button"%>
       <% else %>
           <%= "Not in Stock" %>
       <% end %>

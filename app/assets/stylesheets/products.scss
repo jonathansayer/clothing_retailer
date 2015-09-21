@@ -14,11 +14,11 @@
   margin-bottom: 50%;
 }
 
-.button_to {
+.button_to .add_button {
+  margin-left: 42%;
   height: 50% ;
   width: 15%;
-  margin-right: 50%;
-  margin-left: 42%
+  text-align: center;
 }
 
 .image {
@@ -93,7 +93,7 @@
   position: absolute;
   bottom: 3%;
   left: 10%;
-  right: 20%;
+  right: 10%;
 }
 
 #ribbon-container a {
