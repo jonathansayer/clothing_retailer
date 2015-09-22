@@ -7,7 +7,7 @@ class UpdateOrderedItems
       product_in_basket = OrderedProduct.find_by name:product_name
       product_in_basket.update_attribute(:quantity ,product_in_basket.quantity += 1)
     else
-      OrderedProduct.create(name: product.name, price: product.price, quantity: 1)
+      OrderedProduct.create(name: product.name, price: product.price,catagory: product.catagory, quantity: 1)
     end
   end
 

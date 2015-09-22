@@ -1,12 +1,12 @@
 class PopulateDatabsae < ActiveRecord::Migration
   def change
     Product.create(name:"Almond Toe Court Shoes, Patent Black",
-                  catagory:"Women’sFootwear",
+                  catagory:"Women’s Footwear",
                   price: 99.00,
                   stock: 5,
                   img: "AlmondToeCourtShoes.png" )
     Product.create(name:"Suede Shoes, Blue",
-                  catagory:"Women’sFootwear",
+                  catagory:"Women’s Footwear",
                   price: 42.00,
                   stock: 4,
                   img: "SuedeShoesBlue.png" )
