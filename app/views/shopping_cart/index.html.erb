@@ -71,7 +71,14 @@
             <% end %>
             <div class="panel-footer">
               <%= "Total:" %>
-              <%= " £#{number_with_precision @total, precision: 2}" %>
+              <br>
+              <%= "£#{number_with_precision @original_total, precision: 2}" %>
+              <br>
+              <% if @discount != 0 %>
+                <%= "- £#{number_with_precision @discount, precision: 2}" %>
+                <br>
+                <%= " £#{number_with_precision @new_total, precision: 2}" %>
+              <% end %>
             </div>
             <% else %>
               <%= "No items in cart" %>

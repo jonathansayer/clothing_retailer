@@ -5,10 +5,14 @@ class VoucherDiscount
   end
 
   def self.apply_discount voucher_code, total
-    return total = total - 10 if self.ten_pound_off? voucher_code and total >= 50
-    return total = total - 5 if self.five_pound_off? voucher_code
-    return total = total - 15 if self.fifteen_pound_off? voucher_code and OrderedProduct.exists?(catagory:['Men’s Footwear','Womans Footwear'])
-    return total
+    return total = total - self.discount_amount(voucher_code, total)
+  end
+
+  def self.discount_amount voucher_code, total
+    return 5 if voucher_code == "5OFF"
+    return 10 if voucher_code == "10OFF" and total >= 50
+    return 15 if voucher_code == "15OFF" and total >= 75 and OrderedProduct.exists?(catagory:['Men’s Footwear','Womans Footwear'])
+    return 0
   end
 
   private

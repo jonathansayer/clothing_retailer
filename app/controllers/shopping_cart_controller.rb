@@ -2,10 +2,12 @@ class ShoppingCartController < ApplicationController
 
   def index
     @in_cart = OrderedProduct.all
-    @total = CartTotal.total_calculation
+    @original_total = CartTotal.total_calculation
+    @discount = 0
     if VoucherDiscount.a_voucher? session[:code]
       @code = session[:code]
-      @total = VoucherDiscount.apply_discount @code, @total
+      @discount = VoucherDiscount.discount_amount @code, @original_total
+      @new_total = VoucherDiscount.apply_discount @code, @original_total
     elsif session[:code]
       @error = "The Code you entered is Incorrect"
     end
