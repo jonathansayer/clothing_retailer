@@ -1,4 +1,4 @@
-README
+Clothing Retailer Website
 -------
 
 ![Travis CI builder](https://travis-ci.org/jonathansayer/clothing_retailer.svg?branch=master)
