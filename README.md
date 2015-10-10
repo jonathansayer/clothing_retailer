@@ -1,6 +1,8 @@
 README
 -------
 
+![Travis CI builder](https://travis-ci.org/jonathansayer/clothing_retailer.svg?branch=master)
+
 A Rails application which serves a Website for the use of a Clothing Retailer.
 This application was built using Ruby 2.2.2.
 
