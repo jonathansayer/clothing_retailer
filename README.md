@@ -66,7 +66,7 @@ $ rake db:migrate
 The server can then be started using the traditional Rails method.
 
 ```
-rails s
+$ bin/rails server
 ```
 The Website will be served on Localhost:3000.
 
